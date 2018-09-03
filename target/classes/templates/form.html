@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8"/>
+<title th:text="${titulo}">Insert title here</title>
+<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"  />
+</head>
+<body>
+<div class="container">
+<form th:action="@{/form}" th:object="${usuarios}" method="post" >
+	<div class="form-group">
+    	<label for="nombreUsuario">Nombre de Usuario</label>
+    	<input type="text" class="form-control" id="nombreUsuario" placeholder="NombreUsuario" th:field="*{nombreUsuario}"/>
+    	<small th:if="${#fields.hasErrors('nombreUsuario')}" th:errors="nombreUsuario" class="form-text text-danger"></small>
+  	</div>
+  	<div class="form-group">
+    	<label for="nombre">Nombre</label>
+    	<input type="text" class="form-control" id="nombre" placeholder="Nombre" th:field="*{nombre}"/>
+    	<small th:if="${#fields.hasErrors('nombre')}" th:errors="nombre" class="form-text text-danger"></small>
+  	</div>
+	<div class="form-group">
+    	<label for="apellido">Apellido</label>
+    	<input type="text" class="form-control" id="apellido" placeholder="Apellido" th:field="*{apellido}"/>
+    	<small th:if="${#fields.hasErrors('apellido')}" th:errors="*{apellido}" class="form-text text-danger"></small>
+  	</div>
+	<div class="form-group">
+    	<label for="email">Correo Electronico</label>
+    	<input type="text" class="form-control" id="email" placeholder="Correo" th:field="*{email}"/>
+    	<small th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class="form-text text-danger"></small>
+  	</div>
+  	<!--   <div class="form-group">
+    	<label for="createAt">Fecha</label>
+    	<input type="text" class="form-control" id="createAt" placeholder="Fecha" th:field="*{createAt}"/>
+    	<small th:if="${#fields.hasErrors('createAt')}" th:errors="*{createAt}" class="form-text text-danger"></small>
+  	</div> -->
+  	
+  	
+  	<input type="submit" value="Aceptar" />
+	<input type="hidden" id="id" th:field="*{id_usuario}">
+</form>
+</div>
+</body>
+</html>

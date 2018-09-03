@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>BookShelf</title>
+<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"  />
+</head>
+<body>
+<div class="container">
+	<table class="table">
+ <thead>
+  <tr>
+     <th scope="col">Usuario</th>
+     <th scope="col">Nombre</th>
+     <th scope="col">Apellido</th>
+     <th scope="col">Suscripcion</th>
+     <th scope="col">Fecha de Inscripcion</th>
+     <th scope="col">Email</th>
+     <th scope="col">Contacto</th>
+  </tr>
+ </thead>
+ <!--tfoot>
+  <tr>
+     <td>Sum</td>
+     <td>$180</td>
+  </tr>
+ </tfoot-->
+ <tbody>
+  <tr th:each="usuarios ${usuarios}">
+     <td th:text="${usuarios.nombreUsuario}"/>
+     <td th:text="${usuarios.nombre}" />
+     <td th:text="${usuarios.apellido}" />
+     <td th:text="${usuarios.suscripcion}" />
+     <td th:text="${usuarios.inscripcion}" />
+     <td th:text="${usuarios.email}" />
+     <td th:text="Contacto No Validado Aun" />
+     <td> <a th:href="@{/form/} + ${usuarios.id}" th:text="'Editar'" class="btn btn-primary btn-xs" ></a></td>
+     <td> <a th:href="@{/eliminar/} + ${usuarios.id}" th:text="'Eliminar'" class="btn btn-danger btn-xs" onclick="return confirm('¿Estas seguro?')" ></a></td>
+  </tr>
+ </tbody>
+</table>
+</div>
+
+<a th:href="@{/form}">Crear cliente</a>
+
+
+
+
+
+</body>
+</html>
