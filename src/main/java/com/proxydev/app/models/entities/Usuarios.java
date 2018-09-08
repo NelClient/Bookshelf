@@ -132,9 +132,5 @@ public class Usuarios implements Serializable {
 		this.contacto = contacto;
 	}
 
-	public static long getSerialversionuid() {
-		return serialVersionUID;
-	}
-	
 	
 }
