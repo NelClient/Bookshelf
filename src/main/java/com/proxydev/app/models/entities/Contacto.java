@@ -41,7 +41,7 @@ public class Contacto {
 	@NotEmpty
 	private String contacto3;
 	
-	//Getter and setter
+//Getter and setter
 
 	public Long getId_contacto() {
 		return id_contacto;
@@ -75,8 +75,5 @@ public class Contacto {
 		this.contacto3 = contacto3;
 	}
 
-	public static long getSerialversionuid() {
-		return serialVersionUID;
-	}	
 	
 }

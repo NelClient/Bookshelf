@@ -74,10 +74,6 @@ public class BibliotecasPorUsuario {
 	public void setId_usuario(Long id_usuario) {
 		this.id_usuario = id_usuario;
 	}
-
-	public static long getSerialversionuid() {
-		return serialVersionUID;
-	}
 	
 	
 }
